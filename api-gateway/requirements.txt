@@ -3,3 +3,6 @@ djangorestframework
 drf-yasg
 spyne
 requests
+django-cors-headers
+lxml
+zeep

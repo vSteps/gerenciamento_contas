@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule here
 @Component({
   selector: 'app-root',
   standalone: true, 
-  imports: [CommonModule, HttpClientModule, FormsModule], // Add FormsModule here
+  imports: [CommonModule, HttpClientModule, FormsModule], 
   template: `
 <div class="container">
   <h1>Sistema de Contas</h1>
@@ -84,8 +84,8 @@ export class AppComponent {
   createUser() {
     this.http.post('http://localhost:8000/gateway/users', this.newUser)
       .subscribe(() => {
-        this.getUsers(); // Atualiza a lista após criar
-        this.newUser = { name: '', email: '' }; // Limpa o formulário
+        this.getUsers(); 
+        this.newUser = { name: '', email: '' }; 
       });
   }
 }

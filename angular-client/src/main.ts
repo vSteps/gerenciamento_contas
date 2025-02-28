@@ -4,6 +4,6 @@ import { provideHttpClient } from '@angular/common/http'; // Alteração aqui
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideHttpClient() // Nova forma de prover o HttpClient
+    provideHttpClient() 
   ]
 });

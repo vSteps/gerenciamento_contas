@@ -5,7 +5,7 @@ from spyne.client.http import HttpClient
 from spyne.protocol.soap import Soap11
 from zeep import Client as ZeepClient # type: ignore
 
-@api_view(['GET', 'POST'])  # Adicionei POST
+@api_view(['GET', 'POST'])
 def users(request):
     if request.method == 'POST':
         response = requests.post('http://localhost:8001/api/users/', data=request.data)
@@ -23,11 +23,9 @@ def users(request):
 @api_view(['GET'])
 def account(request, user_id):
     wsdl_url = 'http://localhost:8002/soap/account?wsdl'
-    
-    # Crie o cliente SOAP com Zeep
+
     client = ZeepClient(wsdl_url)
-    
-    # Chame o método diretamente
+
     result = client.service.get_account(user_id)
     
     return Response({
